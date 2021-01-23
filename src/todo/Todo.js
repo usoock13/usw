@@ -1,9 +1,9 @@
 import React, { useReducer, useContext, createContext } from 'react';
-import TotoStore from 'TotoStore';
+import TodoStore, { todoReducer } from 'TotoStore';
 
 const Todo = () => {
-    const [todoItems, dispatch] = useReducer
-    const TotoContext = React.createContext();
+    const [todoItems, dispatch] = useReducer(todoReducer, []);
+    const TodoContext = React.createContext();
     return (
         <section>
             <TodoStore>
