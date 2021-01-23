@@ -13,26 +13,25 @@ export const todoReducer = (todoItems, action) => {
     switch(action.type) {
         case todoActions.addItem:
             return [...todoItems, action.payload];
+        case todoActions.initializeItem:
+            return action.payload;
     }
 }
 
 export const TodoContext = React.createContext();
 
+const tempItems = require('./tempItem.json');
+
 const TotoStore = () => {
-    const [todoItems, dispatch] = useReducer(todoReducer, [
-        {
-            title: '어항숙',
-            description: '어항어항',
-        },
-        {
-            title: '유항숙',
-            description: '우아하게에에',
-        }
-    ]);
+    const [todoItems, dispatch] = useReducer(todoReducer, []);
+
+    const TodoInitialize = () => {
+        dispatch({ type: todoActions.initializeItem, payload: tempItems });
+    }
 
     useEffect(() => {
-        console.log('a c t !')
-    })
+        TodoInitialize();
+    }, [])
     return (
         <TodoContext.Provider value={ { todoItems, dispatch } }>
             <TodoHeader />

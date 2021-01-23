@@ -1,0 +1,10 @@
+:root {
+    font-size: 10px;
+    --pantone-color-y: #F5dF4D;
+    --pantone-color-g: #939597;
+}
+@media screen and (max-width: 1200px) {
+    :root {
+        font-size: calc(10 * 100vw / 1200);
+    }
+}

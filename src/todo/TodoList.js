@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import { TodoContext } from './TodoStore';
 import { todoActions } from './TodoStore';
+import './TodoList.css';
 
 const TodoList = () => {
     const { todoItems, dispatch } = useContext(TodoContext);
     const items = todoItems.map(item => {
         return (
-            <li className="todo-todoitem">
-                <h5>{item.title}</h5>
-                <p>{item.description}</p>
+            <li data-id={item.id} className="todo-todoitem" key={item.id}>
+                <h5 className="todo-togoitem-title">{item.title}</h5>
+                <p className="todo-todoitem-description">{item.description}</p>
             </li>
         )
     })

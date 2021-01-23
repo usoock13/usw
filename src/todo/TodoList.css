@@ -1,0 +1,13 @@
+.todo-todolist {
+    display: flex;
+}
+.todo-todoitem {
+    display: inline-block;
+    width: calc(100% / 3 - 2rem);
+    margin: 1rem;
+    padding: 1.5rem;
+    color: #262626;
+    font-size: 1.4rem;
+    background-color: var(--pantone-color-y);
+    border: .1rem solid #aaa;
+}
